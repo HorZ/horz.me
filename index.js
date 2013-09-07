@@ -10,6 +10,7 @@ function res(request, response) {
   response.write("what's up?");
   response.end();
 
+
   var time = new Date().toLocaleString().substr(0, 33);
   console.log("[Request] - [" + time + "]: request for " + request.url);
 }
