@@ -22,7 +22,7 @@ function route(request, response) {
         response.write(icon);
     } else {
         response.writeHead(200, {"Content-Type": "text/plain"});
-        response.write("what's up?");
+        response.write("what's up, there?");
     }
     response.end();
 }
