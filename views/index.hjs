@@ -2,11 +2,25 @@
 <html>
   <head>
     <title>{{ title }}</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet' href='/bootstrap/css/bootstrap.min.css" />
   </head>
   <body>
+  	<header>
+  		<nav>
+  			<a href="#">a</a>
+  			<a href="#">b</a>
+  			<a href="#">c</a>
+  		</nav>
+  	</header>
     <h1>{{ title }}</h1>
     <p>Welcome to {{ zone }}</p>
     <div>{{anyinfo}}</div>
+    <footer id="footer">
+    	<div class="container">
+    		<p class="text-muted credit">
+	    		<a href="http://www.miitbeian.gov.cn/">沪ICP备13037527号</a>
+	    	</p>
+    	</div>
+    </footer>
   </body>
 </html>
