@@ -13,6 +13,14 @@
   		</nav>
   	</header>
     <input type="file" id="take-picture" accept="image/*">
+    <input type="button" id="show-location" onclick="alert();">
+    <script>
+      function showLocation(position){
+        var latitude = position.coords.latitude;
+        var longitude = position.coords.longitude;
+        alert("[" + latitude + "]-[" + longitude + "]")
+      }
+    </script>
     <h1>{{ title }}</h1>
     <p>Welcome to {{ zone }}</p>
     <div>{{anyinfo}}</div>
