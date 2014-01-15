@@ -13,7 +13,7 @@
   		</nav>
   	</header>
     <input type="file" id="take-picture" accept="image/*">
-    <input type="button" id="show-location" onclick="alert();">
+    <input type="button" text="show" id="show-location" onclick="navigator.geolocation.getCurrentPosition(showLocation);">
     <script>
       function showLocation(position){
         var latitude = position.coords.latitude;
