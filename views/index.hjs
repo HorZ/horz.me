@@ -13,12 +13,12 @@
   		</nav>
   	</header>
     <input type="file" id="take-picture" accept="image/*">
-    <input type="button" text="show" id="show-location" onclick="navigator.geolocation.getCurrentPosition(showLocation);">
+    <input type="button" value="show" id="show-location" onclick="navigator.geolocation.getCurrentPosition(showLocation);">
     <script>
       function showLocation(position){
         var latitude = position.coords.latitude;
         var longitude = position.coords.longitude;
-        alert("[" + latitude + "]-[" + longitude + "]")
+        alert("[" + latitude + "]-[" + longitude + "]");
       }
     </script>
     <h1>{{ title }}</h1>
