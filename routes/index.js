@@ -2,8 +2,7 @@
 /*
  * GET home page.
  */
-
-exports.index = function(req, res){
+exports.test = function(req, res){
   var info = {};
 
   info['sessionID'] = req.sessionID;
@@ -26,13 +25,40 @@ exports.index = function(req, res){
   info['req.subdomains'] = req.subdomains;
   info['req.originalUrl'] = req.originalUrl;
 
+  res.locals = {
+    title: 'horz.me', 
+    zone: 'test zone', 
+    anyinfo: JsonToString(info),
+  }
+  res.render('test', '');
+
+};
+
+/*
+*
+*/
+exports.index = function(req, res){
   var values = {
-  	title: 'horz.me', 
-  	zone: 'test zone', 
-  	anyinfo: JsonToString(info)
+    title: 'horz.me', 
+    zone: 'test zone', 
+    anyinfo: "fdsfdsfd"
   }
 
   res.render('index', values);
+
+};
+
+/*
+* misc
+*/
+exports.misc = function(req, res){
+  var values = {
+    title: 'horz.me', 
+    zone: 'test zone', 
+    anyinfo: ""
+  }
+
+  res.render('test', values);
 
 };
 
@@ -43,6 +69,6 @@ function JsonToString(o) {
         return /^(string|number)$/.test(typeof s) ? "\"" + s + "\"" : s; 
     } 
     for (var i in o) 
-         arr.push("\"" + i + "\":" + fmt(o[i])); 
-    return "{" + arr.join(",") + "}"; 
+         arr.push("  \"" + i + "\": " + fmt(o[i])); 
+    return "{\n" + arr.join(",\n") + "\n}"; 
 } 

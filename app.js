@@ -11,10 +11,14 @@ var path = require('path');
 
 var app = express();
 
+app.engine('html', require('hogan-express'));
+// app.enable('view cache');
+
 // all environments
 app.set('port', process.env.PORT || 80);
 app.set('views', __dirname + '/views');
-app.set('view engine', 'hjs');
+app.set('view engine', 'html');
+app.set('partials', {header: 'header', footer: 'footer', cssheader: 'cssheader'})
 app.use(express.favicon(path.join(__dirname, 'public/images/favicon.ico')));
 app.use(express.logger('dev'));
 app.use(express.bodyParser());
@@ -31,6 +35,8 @@ if ('development' == app.get('env')) {
 }
 
 app.get('/', routes.index);
+app.get('/test', routes.test);
+app.get('/misc', routes.misc);
 app.get('/users', user.list);
 
 http.createServer(app).listen(app.get('port'), function(){
