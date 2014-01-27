@@ -51,14 +51,14 @@ exports.index = function(req, res){
 /*
 * misc
 */
-exports.misc = function(req, res){
+exports.bootstrap = function(req, res){
   var values = {
     title: 'horz.me', 
     zone: 'test zone', 
     anyinfo: ""
   }
 
-  res.render('test', values);
+  res.render('bootstrap', values);
 
 };
 
