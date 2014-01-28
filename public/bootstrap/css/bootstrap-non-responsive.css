@@ -10,6 +10,9 @@ body {
   padding-top: 70px;
   /*padding-bottom: 30px;*/
 }
+.glyphicon {
+  margin-right: 5px;
+}
 
 /* Finesse the page header spacing */
 /*.page-header {
