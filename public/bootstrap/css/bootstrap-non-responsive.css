@@ -50,6 +50,7 @@ body {
 /* Always float the navbar header */
 .navbar-header {
   float: left;
+  padding-right: 20px;
 }
 
 /* Undo the collapsing navbar */
