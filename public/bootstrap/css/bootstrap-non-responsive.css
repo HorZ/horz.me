@@ -8,7 +8,7 @@
 body {
   /*max-width: 960px;*/
   padding-top: 70px;
-  /*padding-bottom: 30px;*/
+  padding-bottom: 30px;
 }
 .glyphicon {
   margin-right: 5px;
@@ -97,10 +97,10 @@ body {
   position: absolute;
   float: left;
   background-color: #fff;
-  border: 1px solid #cccccc;
-  border: 1px solid rgba(0, 0, 0, 0.15);
-  border-width: 0 1px 1px;
-  border-radius: 0 0 4px 4px;
+  /*border: 1px solid #cccccc;*/
+  /*border: 1px solid rgba(0, 0, 0, 0.15);*/
+  /*border-width: 0 1px 1px;*/
+  /*border-radius: 0 0 4px 4px;*/
   -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
           box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
 }

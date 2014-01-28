@@ -62,6 +62,22 @@ exports.bootstrap = function(req, res){
 
 };
 
+/*
+** static pages response
+*/
+exports.static_page = function(req, res){
+  var page_path = req.path.substr(1);
+  res.render(req.path.substr(1));
+}
+
+
+
+
+
+
+
+
+
 function JsonToString(o) {    
     var arr = []; 
     var fmt = function(s) { 

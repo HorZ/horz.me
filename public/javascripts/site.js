@@ -1,3 +1,5 @@
+// global variables
+
 /*
 ** add navigation event
 */
@@ -10,5 +12,5 @@ $("#navbar-buttons ul li").click(function(e){
 	if (!navbtn.hasClass("active")){
 		navbtn.addClass("active");
 	}
-	// e.preventDefault();
+	e.preventDefault();
 });

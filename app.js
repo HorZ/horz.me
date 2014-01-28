@@ -40,7 +40,18 @@ app.use(express.cookieParser('your secret here'));
 app.use(express.session());
 app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public'), { maxAge: 31557600000 }));
-app.use(express.static(path.join(__dirname, 'views')));
+
+// Handle 404
+app.use(function(req, res) {
+  res.status(404);
+  res.render('404.html');
+});
+
+// Handle 500
+app.use(function(error, req, res, next) {
+  res.status(500);
+  res.render('500.html');
+});
 
 // development only
 if ('development' == app.get('env')) {
@@ -48,9 +59,13 @@ if ('development' == app.get('env')) {
 }
 
 app.get('/', routes.index);
+app.get('/whatsup', routes.index);
+app.get('/bio', routes.index);
+app.get('/about', routes.index);
 app.get('/test', routes.test);
-app.get('/bootstrap', routes.bootstrap);
-app.get('/users', user.list);
+app.get('/about.html', routes.static_page);
+// app.get('/bootstrap', routes.bootstrap);
+// app.get('/users', user.list);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
