@@ -2,17 +2,41 @@
 <html>
   <head>
     <title>{{ title }}</title>
-    {{> cssheader }}
+    {{> site_header_css }}
   </head>
   <body>
 
-    {{> header }}
+    {{> site_header }}
     
     <div class="container">
-      <h1>{{ title }}</h1>
-      <p>Welcome to {{ zone }}</p>
+        <div class="row">
+            <div class="col-xs-9">
+                <h1>a</h1>
+                <h1>b</h1>
+                <h1>c</h1>
+                <h1>c</h1>
+                <h1>c</h1>
+                <h1>c</h1>
+                <h1>c</h1>
+                <h1>c</h1>
+                <h1>c</h1>
+                <h1>c</h1>
+                <h1>c</h1>
+                <h1>c</h1>
+                <h1>c</h1>
+                <h1>c</h1>
+                <h1>c</h1>
+                <h1>c</h1>
+                <h1>c</h1>
+                <h1>c</h1>
+            </div>
+            <div class="col-xs-3">
+                {{> site_aside }}
+            </div>
+        </div>
     </div>
 
-    {{> footer }}
+
+    {{> site_footer }}
   </body>
 </html>

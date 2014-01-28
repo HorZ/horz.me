@@ -16,9 +16,21 @@ app.engine('html', require('hogan-express'));
 
 // all environments
 app.set('port', process.env.PORT || 80);
-app.set('views', __dirname + '/views');
+
+//set view engine
 app.set('view engine', 'html');
-app.set('partials', {header: 'header', footer: 'footer', cssheader: 'cssheader'})
+app.set('views', __dirname + '/views');
+
+//set app level partials
+var site_partials = {
+	site_header_css:  'site_header_css',
+	site_header: 'site_header',
+	site_footer: 'site_footer',
+	site_aside:  'site_aside'
+}
+app.set('partials', site_partials);
+
+
 app.use(express.compress());
 app.use(express.favicon(path.join(__dirname, 'public/images/favicon.ico')));
 app.use(express.logger('dev'));
