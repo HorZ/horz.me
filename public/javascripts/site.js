@@ -1,16 +1,27 @@
 // global variables
 
+
 /*
-** add navigation event
+** set navbar active class
 */
-$("#navbtn_about").click(function(){
-	$("#main_area").load("/about.html");
-});
-$("#navbar-buttons ul li").click(function(e){
+function setNavActive(navbtn) {
 	$("#navbar-buttons li.active").removeClass("active");
-	var navbtn = $(this);
 	if (!navbtn.hasClass("active")){
 		navbtn.addClass("active");
 	}
+}
+function setNavActiveById(navbtnID) {
+	setNavActive($("#" + navbtnID));
+}
+$("#navbar-buttons ul li").click(function(e){
+	var href = $(this).find("a").attr("href");
+	History.pushState({rand: Math.random()}, "", href);
 	e.preventDefault();
 });
+
+History.Adapter.bind(window, "statechange", function(){
+	var url = History.getState().url;
+	$("#main_area").load(url + ".html");
+	setNavActiveById("navbtn_" + $.url("path", url).substr(1));
+});
+History.Adapter.trigger(window, "statechange");

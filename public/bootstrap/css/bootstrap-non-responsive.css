@@ -13,6 +13,12 @@ body {
 .glyphicon {
   margin-right: 5px;
 }
+.text-top {
+  vertical-align: top;
+}
+.nowrap {
+  white-space: nowrap;
+}
 
 /* Finesse the page header spacing */
 /*.page-header {
@@ -53,7 +59,7 @@ body {
 /* Always float the navbar header */
 .navbar-header {
   float: left;
-  padding-right: 20px;
+  padding-right: 10px;
 }
 
 /* Undo the collapsing navbar */
@@ -71,9 +77,9 @@ body {
   border-top: 0;
 }
 
-/*.navbar-brand {
-  margin-left: -15px;
-}*/
+.navbar-brand {
+  margin-left: -5px;
+}
 
 /* Always apply the floated nav */
 .navbar-nav {
