@@ -68,6 +68,7 @@ app.get('/test', routes.test);
 app.get('/about.html', routes.static_page);
 app.get('/whatsup.html', routes.static_page);
 app.get('/bio.html', routes.static_page);
+app.get('/baidumap.html', routes.static_page);
 // app.get('/bootstrap', routes.bootstrap);
 // app.get('/users', user.list);
 
